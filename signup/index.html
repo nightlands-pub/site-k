@@ -187,7 +187,7 @@ a { text-decoration: none; color: inherit; }
    ========================================== */
 .signup-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,13 +201,12 @@ a { text-decoration: none; color: inherit; }
 .signup-hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(ellipse at 50% 20%, rgba(50, 15, 55, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 70%, rgba(10, 20, 60, 0.25) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 60%, rgba(15, 23, 20, 0.2) 0%, transparent 40%),
-    linear-gradient(to bottom, rgba(10, 10, 12, 0.6), rgba(10, 10, 12, 0.4)),
-    url('/assets/backgrounds/dark-florals-purple.jpg');
-  background-size: cover;
-  background-position: center;
+    radial-gradient(ellipse at 50% 20%, rgba(50, 15, 55, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(10, 20, 60, 0.15) 0%, transparent 40%),
+    linear-gradient(to bottom, rgba(10, 10, 12, 0.45), rgba(10, 10, 12, 0.35)),
+    url('/assets/backgrounds/candlelight-moody.jpg');
+  background-size: 160%;
+  background-position: center 30%;
 }
 
 /* CSS Star field */
@@ -258,7 +257,7 @@ a { text-decoration: none; color: inherit; }
 /* Vignette overlay */
 .signup-vignette {
   position: absolute; inset: 0; z-index: 2;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(10, 10, 12, 0.6) 100%);
+  background: radial-gradient(ellipse at center, transparent 25%, rgba(10, 10, 12, 0.75) 100%);
   pointer-events: none;
 }
 
@@ -270,10 +269,25 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
+/* Soft arch backdrop behind content */
+.signup-hero-content::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  height: calc(100% + 120px);
+  background: radial-gradient(ellipse at 50% 50%, rgba(10, 10, 14, 0.45) 0%, transparent 70%);
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* Hero content */
 .signup-hero-content {
   position: relative; z-index: 4;
   padding: 0 40px;
+  padding-top: 100px;
   max-width: 760px;
 }
 .signup-hero-ornament {
@@ -387,15 +401,10 @@ a { text-decoration: none; color: inherit; }
    ========================================== */
 .benefits-section {
   position: relative;
-  padding: 120px 40px;
+  padding: 60px 40px 80px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 70% 20%, rgba(45, 10, 46, 0.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(10, 20, 60, 0.25) 0%, transparent 40%),
-    linear-gradient(170deg, rgba(14, 10, 20, 0.88), rgba(12, 12, 24, 0.88), rgba(10, 10, 12, 0.88)),
-    url('/assets/backgrounds/candlelight-moody.jpg');
-  background-size: cover;
-  background-position: center;
+  #241020;
 }
 .benefits-inner {
   max-width: 1000px;
@@ -403,7 +412,7 @@ a { text-decoration: none; color: inherit; }
 }
 .benefits-heading {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 48px;
 }
 .benefits-heading h2 {
   font-family: 'Playfair Display', serif;
@@ -434,12 +443,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 .benefit-card .benefit-icon {
-  font-size: 28px;
-  color: #c4a84d;
-  letter-spacing: 8px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
+  display: none;
+}
+.benefit-card .benefit-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin: 0 auto 22px;
+  display: block;
+  opacity: 0.8;
 }
 .benefit-card h3 {
   font-family: 'Playfair Display', serif;
@@ -470,7 +482,13 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   padding: 90px 40px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.02);
+  background:
+    radial-gradient(ellipse at 40% 30%, rgba(45, 10, 46, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(10, 20, 50, 0.15) 0%, transparent 40%),
+    linear-gradient(170deg, rgba(14, 10, 20, 0.85), rgba(12, 12, 24, 0.85), rgba(10, 10, 12, 0.85)),
+    url('/assets/backgrounds/dark-florals-purple.jpg');
+  background-size: cover;
+  background-position: center;
 }
 .social-section h2 {
   font-family: 'Playfair Display', serif;
@@ -660,7 +678,7 @@ a { text-decoration: none; color: inherit; }
   <div class="signup-hero-content">
     <div class="signup-hero-ornament reveal" style="display:none;"></div>
     <h1 class="signup-hero-title reveal reveal-delay-1">Be the first to hear the latest.</h1>
-    <p class="signup-hero-sub reveal reveal-delay-2">Cover reveal, release date, and Kickstarter access for SHADOWARD, a murder mystery romantasy about a murder that hasn't happened yet.</p>
+    <p class="signup-hero-sub reveal reveal-delay-2">Cover reveal, release date, and special edition Kickstarter access for SHADOWARD, a murder mystery romantasy about a murder that hasn't happened yet.</p>
 
     <!-- Kit signup form -->
     <div class="signup-form-wrapper reveal reveal-delay-3" id="signupFormWrapper">
@@ -692,18 +710,21 @@ a { text-decoration: none; color: inherit; }
 
     <div class="benefits-grid">
       <div class="benefit-card reveal">
-        <h3>Release Date + Pre-Order</h3>
-        <p>Know before it hits shelves. Get early access to the Kickstarter and ebook pre-order.</p>
+        <img class="benefit-img" src="/assets/dagger.png" alt="">
+        <h3>First to Know</h3>
+        <p>Release date, cover reveal, and pre-order links straight to your inbox.</p>
       </div>
 
       <div class="benefit-card reveal reveal-delay-1">
-        <h3>The Cover</h3>
-        <p>Be the first to see the full cover when it's revealed.</p>
+        <img class="benefit-img" src="/assets/lavendar.png" alt="">
+        <h3>Special Editions</h3>
+        <p>Early access to the Kickstarter for exclusive editions you won't find in stores.</p>
       </div>
 
       <div class="benefit-card reveal reveal-delay-2">
-        <h3>Inside the Writing</h3>
-        <p>How the mystery locks together, character backstory that didn't make the page, and the occasional unhinged draft note.</p>
+        <img class="benefit-img" src="/assets/feather.png" alt="">
+        <h3>Inside the Journey</h3>
+        <p>Events, ARC reader calls, and behind-the-scenes updates as the book comes to life.</p>
       </div>
     </div>
   </div>
