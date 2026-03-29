@@ -67,7 +67,7 @@ a { text-decoration: none; color: inherit; }
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 14px 48px;
-  border-bottom: 1px solid rgba(196, 168, 77, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .nav-left { display: flex; align-items: center; gap: 32px; }
 .nav-left a {
@@ -314,7 +314,7 @@ a { text-decoration: none; color: inherit; }
   flex: 1;
   padding: 22px 28px;
   background: #fff;
-  border: 2px solid rgba(196, 168, 77, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-right: none;
   color: #1a1a1a;
   font-family: 'Cormorant Garamond', serif;
@@ -327,7 +327,7 @@ a { text-decoration: none; color: inherit; }
   color: #999;
 }
 .signup-form input:focus {
-  border-color: rgba(196, 168, 77, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .signup-form button {
   padding: 22px 40px;
@@ -396,7 +396,6 @@ a { text-decoration: none; color: inherit; }
     url('/assets/backgrounds/candlelight-moody.jpg');
   background-size: cover;
   background-position: center;
-  border-top: 1px solid rgba(160, 120, 180, 0.1);
 }
 .benefits-inner {
   max-width: 1000px;
@@ -418,7 +417,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   width: 60px;
   height: 1px;
-  background: linear-gradient(to right, transparent, #c4a84d, transparent);
+  display: none;
   margin: 28px auto 0;
 }
 
@@ -429,27 +428,10 @@ a { text-decoration: none; color: inherit; }
   gap: 36px;
 }
 .benefit-card {
-  position: relative;
   padding: 48px 36px;
-  border: 1px solid rgba(196, 168, 77, 0.18);
-  background: rgba(196, 168, 77, 0.03);
+  background: rgba(255, 255, 255, 0.06);
   text-align: center;
-  transition: all 0.4s;
-  overflow: hidden;
 }
-.benefit-card::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(196, 168, 77, 0.08), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.benefit-card:hover {
-  border-color: rgba(196, 168, 77, 0.35);
-  transform: translateY(-4px);
-  background: rgba(196, 168, 77, 0.06);
-}
-.benefit-card:hover::before { opacity: 1; }
 
 .benefit-card .benefit-icon {
   font-size: 28px;
@@ -470,12 +452,7 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
 }
 .benefit-card .benefit-divider {
-  width: 40px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(196, 168, 77, 0.5), transparent);
-  margin: 0 auto 16px;
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 .benefit-card p {
   font-size: 20px;
@@ -493,9 +470,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   padding: 90px 40px;
   text-align: center;
-  background:
-    linear-gradient(135deg, rgba(196, 168, 77, 0.06), rgba(196, 168, 77, 0.02));
-  border-top: 1px solid rgba(196, 168, 77, 0.15);
+  background: rgba(255, 255, 255, 0.02);
 }
 .social-section h2 {
   font-family: 'Playfair Display', serif;
@@ -524,7 +499,6 @@ a { text-decoration: none; color: inherit; }
   color: #d4b85c;
   transition: all 0.3s;
   padding: 14px 32px;
-  border: 1px solid rgba(196, 168, 77, 0.2);
 }
 .social-link svg {
   width: 22px; height: 22px;
@@ -533,8 +507,6 @@ a { text-decoration: none; color: inherit; }
 }
 .social-link:hover {
   color: #e8d56b;
-  border-color: rgba(196, 168, 77, 0.4);
-  background: rgba(196, 168, 77, 0.05);
 }
 .social-link:hover svg { fill: #e8d56b; }
 .social-handle {
@@ -592,7 +564,7 @@ a { text-decoration: none; color: inherit; }
     flex-direction: column;
   }
   .signup-form input {
-    border-right: 2px solid rgba(196, 168, 77, 0.25);
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
     border-bottom: none;
   }
   .signup-form button {
@@ -726,7 +698,7 @@ a { text-decoration: none; color: inherit; }
 
       <div class="benefit-card reveal reveal-delay-1">
         <h3>The Cover</h3>
-        <p>Custom illustrated by MiblArt. You'll see it here first.</p>
+        <p>Be the first to see the full cover when it's revealed.</p>
       </div>
 
       <div class="benefit-card reveal reveal-delay-2">
