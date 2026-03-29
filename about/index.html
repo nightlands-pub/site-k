@@ -187,15 +187,15 @@ img { max-width: 100%; display: block; }
    ========================================== */
 .author-section {
   position: relative;
-  padding: 180px 0 140px;
+  padding: 180px 0 80px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 30% 40%, rgba(45, 10, 46, 0.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(10, 20, 50, 0.25) 0%, transparent 40%),
-    linear-gradient(170deg, rgba(14, 10, 20, 0.85), rgba(12, 12, 24, 0.85), rgba(10, 10, 12, 0.85)),
-    url('/assets/backgrounds/fog-forest-moody.jpg');
+    radial-gradient(ellipse at 30% 40%, rgba(45, 10, 46, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(10, 20, 50, 0.2) 0%, transparent 40%),
+    linear-gradient(170deg, rgba(10, 10, 14, 0.7), rgba(10, 10, 16, 0.7), rgba(10, 10, 14, 0.7)),
+    url('/assets/backgrounds/night-sky-stars.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 0%;
 }
 .author-inner {
   max-width: 1200px;
@@ -214,6 +214,10 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   border: none;
   overflow: hidden;
+  box-shadow:
+    0 0 60px rgba(196, 168, 77, 0.12),
+    0 0 120px rgba(45, 10, 46, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.5);
 }
 .author-photo::before { display: none; }
 .author-text h3 {
@@ -248,12 +252,15 @@ img { max-width: 100%; display: block; }
    ========================================== */
 .social-section {
   position: relative;
-  padding: 110px 40px;
+  padding: 70px 40px;
   text-align: center;
   background:
-    radial-gradient(ellipse at 40% 30%, rgba(15, 35, 30, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 70%, rgba(10, 25, 40, 0.2) 0%, transparent 40%),
-    linear-gradient(170deg, #0c1614, #0a1210, #0c100e);
+    radial-gradient(ellipse at 40% 30%, rgba(45, 10, 46, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(10, 20, 50, 0.15) 0%, transparent 40%),
+    linear-gradient(170deg, rgba(14, 10, 20, 0.85), rgba(12, 12, 24, 0.85), rgba(10, 10, 12, 0.85)),
+    url('/assets/backgrounds/dark-florals-purple.jpg');
+  background-size: cover;
+  background-position: center;
 }
 .social-section h2 {
   font-family: 'Playfair Display', serif;
