@@ -1073,7 +1073,7 @@ img { max-width: 100%; display: block; }
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
       s.pulse += s.pulseSpeed;
-      var flicker = 0.15 + 0.85 * Math.sin(s.pulse);
+      var flicker = 0.5 + 0.5 * Math.abs(Math.sin(s.pulse));
       var alpha = s.opacity * flicker;
 
       if (s.gold) {
