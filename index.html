@@ -304,7 +304,7 @@ img { max-width: 100%; display: block; }
    ========================================== */
 .book-section {
   position: relative;
-  padding: 140px 0;
+  padding: 110px 0 140px;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 70% 20%, rgba(45, 10, 46, 0.15) 0%, transparent 50%),
@@ -333,7 +333,7 @@ img { max-width: 100%; display: block; }
   perspective: 1200px;
 }
 .book-3d-inner {
-  width: 300px;
+  width: 360px;
   aspect-ratio: 2/3;
   position: relative;
   transform-style: preserve-3d;
@@ -401,8 +401,22 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
   color: #e8d56b;
   margin-bottom: 28px;
-  padding-left: 24px;
 }
+.book-text .daggers {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.book-text .daggers img {
+  width: 24px;
+  height: auto;
+  opacity: 0.7;
+}
+.book-text .daggers img:nth-child(1) { transform: rotate(-12deg); }
+.book-text .daggers img:nth-child(2) { transform: rotate(-6deg); }
+.book-text .daggers img:nth-child(3) { transform: rotate(0deg); }
+.book-text .daggers img:nth-child(4) { transform: rotate(6deg); }
+.book-text .daggers img:nth-child(5) { transform: rotate(12deg); }
 .book-text p {
   font-size: 23px; line-height: 1.8;
   color: #d8d2c4;
@@ -935,8 +949,15 @@ img { max-width: 100%; display: block; }
 
     <div class="book-text">
       <h3 class="reveal">Coming Soon</h3>
-      <h2 class="reveal reveal-delay-1">Shadoward</h2>
-      <div class="logline reveal reveal-delay-2">"A murder mystery romantasy about a murder that hasn't happened yet."</div>
+      <div class="daggers reveal reveal-delay-1">
+        <img src="/assets/dagger.png" alt="">
+        <img src="/assets/dagger.png" alt="">
+        <img src="/assets/dagger.png" alt="">
+        <img src="/assets/dagger.png" alt="">
+        <img src="/assets/dagger.png" alt="">
+      </div>
+      <h2 class="reveal reveal-delay-2">Shadoward</h2>
+      <div class="logline reveal reveal-delay-3">A murder mystery romantasy about a murder that hasn't happened yet.</div>
       <p class="reveal reveal-delay-3">A princess on the run. A masked hunter who won't stop. And the lord of the nightlands who might be her only hope.</p>
       <div class="reveal reveal-delay-4">
         <a href="/books" class="btn-primary">Learn More</a>
