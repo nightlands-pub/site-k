@@ -1038,15 +1038,19 @@ img { max-width: 100%; display: block; }
   resize();
   window.addEventListener('resize', resize);
 
-  // Create stars — bright white, more twinkly
-  for (var i = 0; i < 250; i++) {
+  // Create stars — fewer and slower on mobile
+  var isMobile = window.innerWidth < 768;
+  var starCount = isMobile ? 80 : 250;
+  var basePulse = isMobile ? 0.01 : 0.03;
+  var pulseRange = isMobile ? 0.02 : 0.06;
+  for (var i = 0; i < starCount; i++) {
     stars.push({
       x: Math.random() * 2000,
       y: Math.random() * 1200,
       size: 0.4 + Math.random() * 2,
       opacity: 0.2 + Math.random() * 0.7,
       pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.03 + Math.random() * 0.06,
+      pulseSpeed: basePulse + Math.random() * pulseRange,
       gold: false
     });
   }

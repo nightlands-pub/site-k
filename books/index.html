@@ -183,152 +183,67 @@ img { max-width: 100%; display: block; }
 .mobile-menu .mobile-social .social-icon:hover { opacity: 1; }
 
 /* ==========================================
-   HERO SECTION — Books page cinematic
+   SECTION: BOOK (unified — title, cover, description)
    ========================================== */
-.hero {
+.book-section {
   position: relative;
-  min-height: 40vh;
-  padding: 140px 0 80px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
+  padding: 160px 0 100px;
   overflow: hidden;
-  background: #0a0a0c;
-}
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(45, 10, 46, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 70%, rgba(10, 20, 50, 0.2) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 60%, rgba(15, 23, 20, 0.2) 0%, transparent 40%),
-    linear-gradient(to bottom, rgba(10, 10, 12, 0.6), rgba(10, 10, 12, 0.4)),
-    url('/assets/backgrounds/night-sky-stars.jpg');
+    radial-gradient(ellipse at 70% 20%, rgba(45, 10, 46, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(10, 20, 60, 0.1) 0%, transparent 40%),
+    linear-gradient(170deg, rgba(14, 10, 20, 0.5), rgba(12, 12, 24, 0.5), rgba(10, 10, 12, 0.5)),
+    url('/assets/backgrounds/dark-marble-texture.jpg');
   background-size: cover;
   background-position: center;
 }
-
-/* CSS Stars */
-.hero-stars {
-  position: absolute; inset: 0; z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.hero-star {
-  position: absolute;
-  border-radius: 50%;
-  background: #fff;
-  animation: starPulse ease-in-out infinite;
-}
-.hero-star.gold {
-  background: #c4a84d;
-}
-
-@keyframes starPulse {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.3); }
-}
-
-/* Vignette overlay */
-.hero-vignette {
-  position: absolute; inset: 0; z-index: 2;
-  background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(10, 10, 12, 0.6) 100%);
-  pointer-events: none;
-}
-
-/* Bottom fade */
-.hero-fade {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 200px; z-index: 3;
-  background: linear-gradient(to bottom, transparent, #0a0a0c);
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative; z-index: 4;
-  padding: 0 40px;
-  max-width: 960px;
-  margin: 0 auto;
+.book-header {
   text-align: center;
-  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 70px;
+  padding: 0 40px;
 }
-.hero-pre {
+.book-header-pre {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 700;
+  font-size: 18px; font-weight: 700;
   letter-spacing: 5px; text-transform: uppercase;
-  color: #e8d56b;
+  color: #d4b85c;
   margin-bottom: 16px;
 }
-.hero-title {
+.book-daggers {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  height: 70px;
+}
+.book-dagger {
+  width: 18px;
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.5;
+}
+.book-dagger-1 { transform: rotate(-24deg); }
+.book-dagger-2 { transform: rotate(-12deg); }
+.book-dagger-3 { transform: rotate(0deg); }
+.book-dagger-4 { transform: rotate(12deg); }
+.book-dagger-5 { transform: rotate(24deg); }
+.book-header-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(42px, 6vw, 72px);
   font-weight: 600; font-style: italic;
   line-height: 1.15;
   color: #fff;
-  margin-bottom: 28px;
+  margin: 0 auto 24px;
 }
-.hero-title .gold { color: #e8d56b; }
-.hero-sub {
-  font-size: clamp(22px, 2.5vw, 30px);
+.book-header-sub {
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 600;
-  line-height: 1.3;
-  color: #c4a84d;
+  line-height: 1.5;
+  color: #d0cab8;
   font-style: italic;
-  letter-spacing: 1px;
-  max-width: 520px;
-  margin: 0 auto 0;
-}
-.hero-cta-group {
-  display: flex; align-items: center; justify-content: center;
-  gap: 24px; flex-wrap: wrap;
-}
-.btn-primary {
-  display: inline-block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px; font-weight: 700;
-  letter-spacing: 3px; text-transform: uppercase;
-  padding: 22px 56px;
-  background: linear-gradient(135deg, #d4b85c, #c4a84d, #d4b85c);
-  background-size: 200% 200%;
-  color: #0a0a0c;
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s;
-  position: relative;
-}
-.btn-primary:hover {
-  background-position: 100% 0;
-  box-shadow: 0 0 40px rgba(196, 168, 77, 0.3);
-  transform: translateY(-2px);
-}
-.btn-ghost {
-  display: inline-block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px; font-weight: 700;
-  letter-spacing: 3px; text-transform: uppercase;
-  padding: 22px 56px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  transition: all 0.3s;
-}
-.btn-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.7);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* ==========================================
-   SECTION: BOOK SHOWCASE
-   ========================================== */
-.book-section {
-  position: relative;
-  padding: 60px 0 80px;
-  overflow: hidden;
-  background:
-    linear-gradient(170deg, rgba(30, 15, 40, 0.8), rgba(25, 12, 35, 0.75)),
-    url('/assets/backgrounds/dark-marble-texture.jpg');
-  background-size: cover;
-  background-position: center;
+  letter-spacing: 0.5px;
 }
 .book-section-inner {
   max-width: 1200px;
@@ -350,7 +265,7 @@ img { max-width: 100%; display: block; }
   perspective: 1200px;
 }
 .book-3d-inner {
-  width: 300px;
+  width: 400px;
   aspect-ratio: 2/3;
   position: relative;
   transform-style: preserve-3d;
@@ -467,45 +382,68 @@ img { max-width: 100%; display: block; }
    ========================================== */
 .expect-section {
   position: relative;
-  padding: 80px 40px;
+  padding: 100px 40px;
   overflow: hidden;
-  background: #0c1614;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(45, 10, 46, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(30, 8, 35, 0.15) 0%, transparent 40%),
+    linear-gradient(170deg, rgba(10, 8, 14, 0.82), rgba(12, 10, 18, 0.78), rgba(10, 8, 14, 0.85)),
+    url('/assets/backgrounds/dark-florals-purple.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.expect-fade-top {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 120px; z-index: 2;
+  background: linear-gradient(to bottom, #0a0a0c, transparent);
+  pointer-events: none;
+}
+.expect-fade-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 120px; z-index: 2;
+  background: linear-gradient(to top, #0a0a0c, transparent);
+  pointer-events: none;
 }
 .expect-header {
+  position: relative; z-index: 3;
   text-align: center;
-  margin-bottom: 70px;
-}
-.expect-header h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px; font-weight: 700;
-  letter-spacing: 4px; text-transform: uppercase;
-  color: #d4b85c;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 .expect-header h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(34px, 4.5vw, 50px);
-  font-weight: 600;
+  font-weight: 500;
+  font-style: italic;
   color: #fff;
 }
 .expect-grid {
+  position: relative; z-index: 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
 .expect-card {
-  padding: 48px 32px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 36px 24px;
+  background: #25202e;
   text-align: center;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .expect-card h4 {
   font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 600;
+  font-size: 26px; font-weight: 600;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.4;
+}
+.expect-card p {
+  font-size: 21px;
+  line-height: 1.7;
+  color: #c8c2b4;
 }
 
 /* ==========================================
@@ -678,24 +616,19 @@ img { max-width: 100%; display: block; }
     text-align: center;
   }
 
-  .expect-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .expect-section { padding: 80px 30px; }
 
-  .hero-content { padding: 0 24px; }
-  .hero { min-height: 40vh; }
+  .book-header { margin-bottom: 50px; }
 }
 
 @media (max-width: 600px) {
-  .hero-cta-group { flex-direction: column; }
-  .btn-primary, .btn-ghost { width: 100%; text-align: center; }
   .newsletter-form { flex-direction: column; }
   .newsletter-form input { border-right: 2px solid rgba(255, 255, 255, 0.15); }
-  .expect-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .expect-card { padding: 28px 18px; }
+  .expect-grid { grid-template-columns: 1fr; gap: 20px; }
+  .expect-card { padding: 32px 24px; }
   .book-3d-inner { width: 240px; }
-  .hero { min-height: 35vh; }
-  .book-section { padding: 80px 0; }
+  .book-section { padding: 120px 0 80px; }
+  .book-header { padding: 0 24px; margin-bottom: 40px; }
   .expect-section { padding: 80px 20px; }
   .newsletter-section { padding: 80px 20px; }
 }
@@ -756,24 +689,21 @@ img { max-width: 100%; display: block; }
 </div>
 
 <!-- ========================================
-     HERO BANNER — Coming Soon
-     ======================================== -->
-<section class="hero" id="heroSection">
-  <div class="hero-bg"></div>
-  <div class="hero-stars" id="heroStars"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-fade"></div>
-  <div class="hero-content">
-    <p class="hero-pre reveal">Coming Soon</p>
-    <h1 class="hero-title reveal reveal-delay-1">Shadoward</h1>
-    <p class="hero-sub reveal reveal-delay-2">A murder mystery romantasy about<br>a murder that hasn't happened yet.</p>
-  </div>
-</section>
-
-<!-- ========================================
-     BOOK SHOWCASE
+     BOOK — unified section
      ======================================== -->
 <section class="book-section" id="book-showcase">
+  <div class="book-header">
+    <p class="book-header-pre reveal">Coming Soon</p>
+    <div class="book-daggers reveal reveal-delay-1">
+      <img class="book-dagger book-dagger-1" src="/assets/dagger.png" alt="" aria-hidden="true">
+      <img class="book-dagger book-dagger-2" src="/assets/dagger.png" alt="" aria-hidden="true">
+      <img class="book-dagger book-dagger-3" src="/assets/dagger.png" alt="" aria-hidden="true">
+      <img class="book-dagger book-dagger-4" src="/assets/dagger.png" alt="" aria-hidden="true">
+      <img class="book-dagger book-dagger-5" src="/assets/dagger.png" alt="" aria-hidden="true">
+    </div>
+    <h1 class="book-header-title reveal reveal-delay-1">Shadoward</h1>
+    <p class="book-header-sub reveal reveal-delay-2">A murder mystery romantasy about a murder that hasn't happened yet.</p>
+  </div>
   <div class="book-section-inner">
     <div class="book-visual reveal">
       <div class="book-glow"></div>
@@ -781,7 +711,7 @@ img { max-width: 100%; display: block; }
         <div class="book-3d-inner">
           <div class="book-spine"></div>
           <div class="book-cover">
-            <img src="../assets/backgrounds/shadoward-coming-soon-cover.jpg" alt="SHADOWARD by Alison Archer — Coming Soon">
+            <img src="/assets/backgrounds/shadoward-coming-soon-cover.jpg" alt="SHADOWARD by Alison Archer — Coming Soon">
           </div>
         </div>
       </div>
@@ -810,6 +740,8 @@ img { max-width: 100%; display: block; }
      WHAT TO EXPECT
      ======================================== -->
 <section class="expect-section">
+  <div class="expect-fade-top"></div>
+  <div class="expect-fade-bottom"></div>
   <div class="expect-header">
     <h2 class="reveal">What you're getting into.</h2>
   </div>
@@ -827,7 +759,7 @@ img { max-width: 100%; display: block; }
       <h4>A heroine worth rooting for</h4>
     </div>
   </div>
-  <div class="gold-strip-inner" style="margin-top: 36px;">
+  <div class="gold-strip-inner" style="margin-top: 36px; position: relative; z-index: 3;">
     <span>Morally Gray MMC</span>
     <span>Forced Proximity</span>
     <span>Fugitive Princess</span>
