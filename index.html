@@ -15,7 +15,7 @@ body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
   color: #f5f0e8;
-  background: #0a0a0c;
+  background: #151518;
   overflow-x: hidden;
 }
 a { text-decoration: none; color: inherit; }
@@ -193,7 +193,7 @@ img { max-width: 100%; display: block; }
   align-items: center; justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: #0a0a0c;
+  background: #151518;
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
@@ -213,19 +213,16 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-/* Vignette overlay */
+/* Vignette overlay — removed (AI tell) */
 .hero-vignette {
-  position: absolute; inset: 0; z-index: 2;
-  background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(10, 10, 12, 0.6) 100%);
-  pointer-events: none;
+  display: none;
 }
 
 /* Bottom fade */
 .hero-fade {
   position: absolute; bottom: 0; left: 0; right: 0;
   height: 200px; z-index: 3;
-  background: linear-gradient(to bottom, transparent, #0a0a0c);
+  background: linear-gradient(to bottom, transparent, #151518);
   pointer-events: none;
 }
 
@@ -385,7 +382,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 700;
   letter-spacing: 4px; text-transform: uppercase;
-  color: #d4b85c;
+  color: #fff;
   margin-bottom: 20px;
 }
 .book-text h2 {
@@ -478,7 +475,6 @@ img { max-width: 100%; display: block; }
   font-family: 'Playfair Display', serif;
   font-size: 20px;
   font-weight: 600;
-  font-style: italic;
   color: #0a0a0c;
   letter-spacing: 0.5px;
 }
@@ -593,7 +589,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 700;
   letter-spacing: 4px; text-transform: uppercase;
-  color: #d4b85c;
+  color: #fff;
   margin-bottom: 20px;
 }
 .author-text h2 {
@@ -643,7 +639,7 @@ img { max-width: 100%; display: block; }
 .newsletter-inner h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(40px, 5vw, 58px);
-  font-weight: 600; font-style: italic;
+  font-weight: 600;
   color: #fff;
   margin-bottom: 24px;
 }
@@ -709,14 +705,12 @@ img { max-width: 100%; display: block; }
 }
 .newsletter-fine {
   font-size: 17px; font-weight: 500;
-  color: rgba(200, 192, 176, 0.55);
-  font-style: italic;
+  color: #c8c2b4;
   margin-bottom: 16px;
 }
 .newsletter-proof {
   font-size: 19px; font-weight: 600;
   color: #c4a84d;
-  font-style: italic;
 }
 
 /* ==========================================
@@ -731,7 +725,7 @@ img { max-width: 100%; display: block; }
 .social-section h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(30px, 3.5vw, 42px);
-  font-weight: 500; font-style: italic;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 36px;
 }
@@ -761,7 +755,7 @@ img { max-width: 100%; display: block; }
 .social-handle {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 600;
-  color: rgba(200, 192, 176, 0.5);
+  color: #c8c2b4;
   letter-spacing: 1px;
 }
 
@@ -771,11 +765,11 @@ img { max-width: 100%; display: block; }
 .footer {
   padding: 36px 40px;
   text-align: center;
-  background: #060608;
+  background: #101012;
 }
 .footer-copy {
   font-size: 14px; font-weight: 500;
-  color: rgba(200, 192, 176, 0.3);
+  color: rgba(200, 192, 176, 0.6);
   letter-spacing: 1px;
 }
 
