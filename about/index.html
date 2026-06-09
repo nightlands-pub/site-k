@@ -22,35 +22,16 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
 /* ==========================================
-   CUSTOM CURSOR GLOW (subtle)
-   ========================================== */
-.cursor-glow {
-  position: fixed;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,168,77,0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s;
-}
-
-/* ==========================================
    SCROLL-REVEAL ANIMATIONS
    ========================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.5s ease;
 }
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
-.reveal-delay-3 { transition-delay: 0.45s; }
-.reveal-delay-4 { transition-delay: 0.6s; }
+.reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4 { transition-delay: 0s; }
 
 /* ==========================================
    NAVIGATION
@@ -447,8 +428,6 @@ img { max-width: 100%; display: block; }
 </head>
 <body>
 
-<!-- Cursor glow -->
-<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- ========================================
      NAVIGATION
@@ -556,19 +535,12 @@ img { max-width: 100%; display: block; }
      ========================================== -->
 <script>
 // ==========================================
-// NEWSLETTER STARS
+// NEWSLETTER STARS (static)
 // ==========================================
 (function() {
   var container = document.getElementById('newsletter-stars');
   if (!container) return;
   var ctx = container.getContext('2d');
-
-  function resize() {
-    container.width = container.parentElement.offsetWidth;
-    container.height = container.parentElement.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
 
   var stars = [];
   for (var i = 0; i < 80; i++) {
@@ -576,26 +548,24 @@ img { max-width: 100%; display: block; }
       x: Math.random(),
       y: Math.random(),
       size: 0.3 + Math.random() * 1.2,
-      opacity: 0.05 + Math.random() * 0.2,
-      pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.003 + Math.random() * 0.01
+      opacity: 0.08 + Math.random() * 0.15
     });
   }
 
   function draw() {
+    container.width = container.parentElement.offsetWidth;
+    container.height = container.parentElement.offsetHeight;
     ctx.clearRect(0, 0, container.width, container.height);
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
-      s.pulse += s.pulseSpeed;
-      var alpha = s.opacity * (0.6 + 0.4 * Math.sin(s.pulse));
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + s.opacity + ')';
       ctx.beginPath();
       ctx.arc(s.x * container.width, s.y * container.height, s.size, 0, Math.PI * 2);
       ctx.fill();
     }
-    requestAnimationFrame(draw);
   }
   draw();
+  window.addEventListener('resize', draw);
 })();
 
 // ==========================================
@@ -646,19 +616,6 @@ img { max-width: 100%; display: block; }
       menu.classList.remove('open');
       document.body.style.overflow = '';
     });
-  });
-})();
-
-// ==========================================
-// CURSOR GLOW
-// ==========================================
-(function() {
-  var glow = document.getElementById('cursorGlow');
-  if (!glow) return;
-  if (window.innerWidth < 900) { glow.style.display = 'none'; return; }
-  document.addEventListener('mousemove', function(e) {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
   });
 })();
 

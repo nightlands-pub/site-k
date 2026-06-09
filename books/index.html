@@ -22,35 +22,16 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
 /* ==========================================
-   CUSTOM CURSOR GLOW (subtle)
-   ========================================== */
-.cursor-glow {
-  position: fixed;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,168,77,0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s;
-}
-
-/* ==========================================
    SCROLL-REVEAL ANIMATIONS
    ========================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.5s ease;
 }
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
-.reveal-delay-3 { transition-delay: 0.45s; }
-.reveal-delay-4 { transition-delay: 0.6s; }
+.reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4 { transition-delay: 0s; }
 
 /* ==========================================
    NAVIGATION
@@ -269,10 +250,6 @@ img { max-width: 100%; display: block; }
   position: relative;
   transform-style: preserve-3d;
   transform: rotateY(-12deg);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.book-3d:hover .book-3d-inner {
-  transform: rotateY(-4deg) scale(1.03);
 }
 
 .book-cover {
@@ -414,34 +391,27 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   color: #fff;
 }
-.expect-grid {
+.expect-promises {
   position: relative; z-index: 3;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1100px;
+  max-width: 720px;
   margin: 0 auto;
-}
-.expect-card {
-  padding: 36px 24px;
-  background: #25202e;
   text-align: center;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.expect-card h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
+.expect-icon {
+  width: 40px; height: auto;
+  margin: 0 auto 26px;
+  opacity: 0.85;
 }
-.expect-card p {
-  font-size: 22px;
-  line-height: 1.7;
-  color: #c8c2b4;
+.expect-promises p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(23px, 2.6vw, 30px);
+  font-weight: 600;
+  color: #efe9dd;
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+.expect-promises p:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================
@@ -454,7 +424,7 @@ img { max-width: 100%; display: block; }
 }
 .gold-strip-inner {
   display: flex; align-items: center; justify-content: center;
-  gap: 12px 10px; flex-wrap: wrap;
+  gap: 18px 14px; flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -475,6 +445,15 @@ img { max-width: 100%; display: block; }
     0% 94%, 3% 88%, 0% 80%, 2% 72%, 0% 64%, 3% 56%, 0% 48%, 2% 40%, 0% 32%, 3% 24%, 0% 16%, 2% 8%, 0% 0%
   );
 }
+.gold-strip-inner span:nth-child(1) { transform: rotate(-2deg); }
+.gold-strip-inner span:nth-child(2) { transform: rotate(1.5deg) translateY(3px); }
+.gold-strip-inner span:nth-child(3) { transform: rotate(-1deg); }
+.gold-strip-inner span:nth-child(4) { transform: rotate(2deg) translateY(-2px); }
+.gold-strip-inner span:nth-child(5) { transform: rotate(-1.5deg); }
+.gold-strip-inner span:nth-child(6) { transform: rotate(1deg) translateY(4px); }
+.gold-strip-inner span:nth-child(7) { transform: rotate(-2.5deg) translateY(-2px); }
+.gold-strip-inner span:nth-child(8) { transform: rotate(1.5deg); }
+.gold-strip-inner span:nth-child(9) { transform: rotate(-1deg) translateY(3px); }
 .gold-strip-inner .sep {
   display: none;
 }
@@ -632,8 +611,6 @@ img { max-width: 100%; display: block; }
 </head>
 <body>
 
-<!-- Cursor glow -->
-<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- ========================================
      NAVIGATION
@@ -741,19 +718,12 @@ img { max-width: 100%; display: block; }
   <div class="expect-header">
     <h2 class="reveal">What you're getting into.</h2>
   </div>
-  <div class="expect-grid">
-    <div class="expect-card reveal">
-      <h4>Mystery that keeps you guessing</h4>
-    </div>
-    <div class="expect-card reveal reveal-delay-1">
-      <h4>Slow burn that pays off</h4>
-    </div>
-    <div class="expect-card reveal reveal-delay-2">
-      <h4>A plot that doesn't quit</h4>
-    </div>
-    <div class="expect-card reveal reveal-delay-3">
-      <h4>A heroine worth rooting for</h4>
-    </div>
+  <div class="expect-promises reveal">
+    <img src="/assets/lavendar.png" alt="" class="expect-icon">
+    <p>Mystery that keeps you guessing</p>
+    <p>Slow burn that pays off</p>
+    <p>A plot that doesn't quit</p>
+    <p>A heroine worth rooting for</p>
   </div>
   <div class="gold-strip-inner" style="margin-top: 36px; position: relative; z-index: 3;">
     <span>Morally Gray MMC</span>
@@ -812,19 +782,12 @@ img { max-width: 100%; display: block; }
 })();
 
 // ==========================================
-// NEWSLETTER STARS (canvas-based, matching homepage)
+// NEWSLETTER STARS (static)
 // ==========================================
 (function() {
   var container = document.getElementById('newsletter-stars');
   if (!container) return;
   var ctx = container.getContext('2d');
-
-  function resize() {
-    container.width = container.parentElement.offsetWidth;
-    container.height = container.parentElement.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
 
   var stars = [];
   for (var i = 0; i < 80; i++) {
@@ -832,26 +795,24 @@ img { max-width: 100%; display: block; }
       x: Math.random(),
       y: Math.random(),
       size: 0.3 + Math.random() * 1.2,
-      opacity: 0.05 + Math.random() * 0.2,
-      pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.003 + Math.random() * 0.01
+      opacity: 0.08 + Math.random() * 0.15
     });
   }
 
   function draw() {
+    container.width = container.parentElement.offsetWidth;
+    container.height = container.parentElement.offsetHeight;
     ctx.clearRect(0, 0, container.width, container.height);
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
-      s.pulse += s.pulseSpeed;
-      var alpha = s.opacity * (0.6 + 0.4 * Math.sin(s.pulse));
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + s.opacity + ')';
       ctx.beginPath();
       ctx.arc(s.x * container.width, s.y * container.height, s.size, 0, Math.PI * 2);
       ctx.fill();
     }
-    requestAnimationFrame(draw);
   }
   draw();
+  window.addEventListener('resize', draw);
 })();
 
 // ==========================================
@@ -902,19 +863,6 @@ img { max-width: 100%; display: block; }
       menu.classList.remove('open');
       document.body.style.overflow = '';
     });
-  });
-})();
-
-// ==========================================
-// CURSOR GLOW
-// ==========================================
-(function() {
-  var glow = document.getElementById('cursorGlow');
-  if (!glow) return;
-  if (window.innerWidth < 900) { glow.style.display = 'none'; return; }
-  document.addEventListener('mousemove', function(e) {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
   });
 })();
 
