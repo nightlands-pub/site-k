@@ -292,54 +292,27 @@ img { max-width: 100%; display: block; }
   background-position: center;
 }
 .book-section-inner {
-  max-width: 1200px;
+  max-width: 1620px;
   margin: 0 auto;
   padding: 0 60px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 460px) 480px;
+  gap: 36px;
   align-items: center;
+  justify-content: center;
 }
 .book-visual {
   display: flex; align-items: center; justify-content: center;
   position: relative;
 }
 
-/* 3D Book cover */
-.book-3d {
-  perspective: 1200px;
-}
-.book-3d-inner {
-  width: 360px;
-  aspect-ratio: 2/3;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateY(-12deg);
-}
-
-.book-cover {
-  position: absolute; inset: 0;
-  border: 3px solid rgba(255, 255, 255, 0.6);
-  box-shadow:
-    10px 10px 40px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(45, 10, 46, 0.15);
-  overflow: hidden;
-}
-.book-cover img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+/* 3D book mockup (pre-rendered, from DIY Book Covers 3D mockup tool) */
+.book-mockup {
   display: block;
-}
-
-/* Book spine illusion */
-.book-spine {
-  position: absolute;
-  top: 2px; left: -18px; bottom: 2px;
-  width: 18px;
-  background: linear-gradient(to right, #0e0812, #1a1020, #120a18);
-  transform: rotateY(90deg);
-  transform-origin: right center;
-  border: none;
+  width: 460px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Glow behind book */
@@ -908,13 +881,8 @@ img { max-width: 100%; display: block; }
   <div class="book-section-inner">
     <div class="book-visual reveal">
       <div class="book-glow"></div>
-      <a href="/books" class="book-3d" style="display:block;cursor:pointer;">
-        <div class="book-3d-inner">
-          <div class="book-spine"></div>
-          <div class="book-cover">
-            <img src="assets/backgrounds/shadoward-coming-soon-cover.jpg" alt="SHADOWARD by Alison Archer, coming soon" >
-          </div>
-        </div>
+      <a href="/books" style="display:block;cursor:pointer;">
+        <img class="book-mockup" src="assets/shadoward-3d-mockup-tight.png" alt="SHADOWARD by Alison Archer, coming soon">
       </a>
     </div>
 
