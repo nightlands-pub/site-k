@@ -245,7 +245,7 @@ img { max-width: 100%; display: block; }
   font-size: 18px; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase;
   padding: 22px 56px;
-  background: linear-gradient(135deg, #d4b85c, #c4a84d, #d4b85c);
+  background: linear-gradient(135deg, #f7dd57, #f0c92f, #f7dd57);
   background-size: 200% 200%;
   color: #0a0a0c;
   border: none;
@@ -255,9 +255,18 @@ img { max-width: 100%; display: block; }
 }
 .btn-primary:hover {
   background-position: 100% 0;
-  box-shadow: 0 0 40px rgba(196, 168, 77, 0.3);
+  box-shadow: 0 0 40px rgba(245, 205, 55, 0.4);
   transform: translateY(-2px);
 }
+/* Brighter-yellow pre-order button */
+.btn-preorder {
+  background: linear-gradient(135deg, #f7dd57, #f0c92f, #f7dd57);
+}
+.btn-preorder:hover {
+  box-shadow: 0 0 44px rgba(245, 205, 55, 0.5);
+}
+.book-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.book-cta .btn-primary, .book-cta .btn-ghost { padding: 18px 28px; letter-spacing: 2px; }
 .btn-ghost {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
@@ -642,9 +651,9 @@ img { max-width: 100%; display: block; }
 }
 .newsletter-form button {
   padding: 22px 40px;
-  background: linear-gradient(135deg, #d4b85c, #c4a84d);
+  background: linear-gradient(135deg, #f7dd57, #f0c92f);
   color: #0a0a0c;
-  border: 2px solid #c4a84d;
+  border: 2px solid #f0c92f;
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 700;
   letter-spacing: 2px; text-transform: uppercase;
@@ -882,7 +891,7 @@ img { max-width: 100%; display: block; }
     <div class="book-visual reveal">
       <div class="book-glow"></div>
       <a href="/books" style="display:block;cursor:pointer;">
-        <img class="book-mockup" src="assets/shadoward-3d-mockup-tight.png" alt="SHADOWARD by Alison Archer, coming soon">
+        <img class="book-mockup" src="assets/shadoward-3d-cover.png" alt="SHADOWARD by Alison Archer">
       </a>
     </div>
 
@@ -898,8 +907,9 @@ img { max-width: 100%; display: block; }
       <h2 class="reveal reveal-delay-2">Shadoward</h2>
       <div class="logline reveal reveal-delay-3">A romantasy about a murder that hasn't happened yet.</div>
       <p class="reveal reveal-delay-3">A princess on the run. A masked hunter who won't stop. And the lord of the nightlands who might be her only hope.</p>
-      <div class="reveal reveal-delay-4">
-        <a href="/books" class="btn-primary">Learn More</a>
+      <div class="book-cta reveal reveal-delay-4">
+        <a href="https://www.amazon.com/Shadoward-Romantasy-Mystery-Divinial-Duology-ebook/dp/B0H747897B" class="btn-primary btn-preorder" target="_blank" rel="noopener">Pre-Order Now</a>
+        <a href="/books" class="btn-ghost">Learn More</a>
       </div>
     </div>
   </div>
