@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Read Chapter One | SHADOWARD by Alison Archer</title>
-<meta name="description" content="Read the first chapter of SHADOWARD, a romantasy by Alison Archer.">
-<link rel="canonical" href="https://authoralisonarcher.com/chapter-one/">
+<title>Content Warnings | SHADOWARD by Alison Archer</title>
+<meta name="description" content="The full list of content warnings for SHADOWARD by Alison Archer, plus what the book does not contain. No plot spoilers.">
+<link rel="canonical" href="https://authoralisonarcher.com/content-warnings/">
 
 <!-- Social link preview (Facebook, X, Discord, iMessage, Pinterest, Slack) -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alison Archer">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://authoralisonarcher.com/chapter-one/">
-<meta property="og:title" content="Read Chapter One | SHADOWARD by Alison Archer">
-<meta property="og:description" content="Read the first chapter of SHADOWARD, a romantasy about a murder that hasn't happened yet.">
+<meta property="og:url" content="https://authoralisonarcher.com/content-warnings/">
+<meta property="og:title" content="Content Warnings | SHADOWARD by Alison Archer">
+<meta property="og:description" content="The full list of content warnings for SHADOWARD, plus what the book does not contain. No plot spoilers.">
 <meta property="og:image" content="https://authoralisonarcher.com/assets/social-card-shadoward.jpg">
 <meta property="og:image:secure_url" content="https://authoralisonarcher.com/assets/social-card-shadoward.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -21,8 +21,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The cover of SHADOWARD by Alison Archer: a woman with pale rose-gold hair lying beneath a fan of seven swords.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Read Chapter One | SHADOWARD by Alison Archer">
-<meta name="twitter:description" content="Read the first chapter of SHADOWARD, a romantasy about a murder that hasn't happened yet.">
+<meta name="twitter:title" content="Content Warnings | SHADOWARD by Alison Archer">
+<meta name="twitter:description" content="The full list of content warnings for SHADOWARD, plus what the book does not contain. No plot spoilers.">
 <meta name="twitter:image" content="https://authoralisonarcher.com/assets/social-card-shadoward.jpg">
 <meta name="twitter:image:alt" content="The cover of SHADOWARD by Alison Archer.">
 
@@ -39,28 +39,6 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
-.cursor-glow {
-  position: fixed;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,168,77,0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
 
 .nav {
   position: fixed; top: 0; left: 0; right: 0;
@@ -167,87 +145,48 @@ a { text-decoration: none; color: inherit; }
 .chapter-header-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(42px, 6vw, 64px);
-  font-weight: 600; font-style: italic;
+  font-weight: 600;
   color: #fff; margin-bottom: 16px;
 }
 .chapter-header-sub {
-  font-size: 20px; font-weight: 500; font-style: italic;
-  color: #b0a898; line-height: 1.5;
+  font-size: 22px; font-weight: 600;
+  color: #d8d2c4; line-height: 1.5;
 }
 
-/* Chapter body - outer wrapper on dark bg */
-.chapter-body {
-  max-width: 700px;
+/* Content warnings, white section on the dark page */
+.cw-section {
+  background: #f2efe9;
+  padding: 84px 24px 92px;
+}
+.cw-inner {
+  max-width: 680px;
   margin: 0 auto;
-  padding: 60px 24px 80px;
 }
-
-/* Kindle-style reader box */
-.kindle-reader {
-  background: #faf8f5;
-  border-radius: 4px;
-  padding: 48px 40px 56px;
-  max-height: 70vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+.cw-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 21px; font-weight: 600; line-height: 1.7;
+  color: #1a1a1a;
+  margin-bottom: 38px;
 }
-.kindle-reader::-webkit-scrollbar { width: 8px; }
-.kindle-reader::-webkit-scrollbar-track { background: #eee; border-radius: 4px; }
-.kindle-reader::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-.kindle-reader::-webkit-scrollbar-thumb:hover { background: #aaa; }
-
-.kindle-reader .chapter-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px; font-weight: 700;
-  letter-spacing: 4px; text-transform: uppercase;
-  color: #999; text-align: center; margin-bottom: 6px;
+.cw-list {
+  margin: 0;
+  padding-left: 26px;
 }
-.kindle-reader .chapter-name {
+.cw-list li {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 21px; font-weight: 600; line-height: 1.6;
+  color: #1a1a1a;
+  padding: 9px 0;
+}
+.cw-closing {
   font-family: 'Playfair Display', serif;
-  font-size: 24px; font-weight: 600; font-style: italic;
-  color: #222; text-align: center; margin-bottom: 36px;
-}
-
-.kindle-reader .prose {
-  font-family: Georgia, 'Cormorant Garamond', serif;
-  font-size: 17px; line-height: 1.85; color: #2a2a2a; font-weight: 400;
-}
-.kindle-reader .prose p {
-  margin-bottom: 16px;
-  text-indent: 1.5em;
-}
-.kindle-reader .prose p:first-child {
-  text-indent: 0;
-}
-.kindle-reader .prose p.no-indent {
-  text-indent: 0;
-}
-.kindle-reader .prose p.scene-break {
-  text-align: center; text-indent: 0;
-  color: #999; letter-spacing: 8px;
-  margin: 32px 0; font-size: 14px;
-}
-.kindle-reader .prose .drop-cap:first-letter {
-  font-family: 'Playfair Display', serif;
-  float: left; font-size: 60px; line-height: 0.75;
-  padding-right: 8px; padding-top: 4px;
-  color: #222; font-weight: 700;
-}
-.kindle-reader .prose .pull-quote {
-  text-indent: 0; font-style: italic; color: #666;
-  font-size: 19px; text-align: center; margin: 32px 0;
-}
-.kindle-reader .prose .blurb-heading {
-  text-indent: 0; font-weight: 700; color: #222; margin-top: 24px;
-}
-.kindle-reader .prose .meta {
-  text-indent: 0; text-align: center; color: #888;
-  font-size: 14px; margin-top: 32px;
+  font-size: 21px; font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 50px;
 }
 
 @media (max-width: 600px) {
-  .kindle-reader { padding: 32px 24px 40px; max-height: 60vh; }
-  .kindle-reader .prose { font-size: 16px; }
+  .cw-section { padding: 56px 24px 64px; }
 }
 
 /* CTA section */
@@ -377,8 +316,6 @@ footer a:hover { color: #c4a84d; }
 </head>
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
-
 <nav class="nav" id="mainNav">
   <div class="nav-left">
     <a href="/">Home</a>
@@ -425,36 +362,33 @@ footer a:hover { color: #c4a84d; }
 </div>
 
 <section class="chapter-header">
-  <p class="chapter-header-pre reveal">Read Chapter One</p>
-  <h1 class="chapter-header-title reveal reveal-delay-1">Shadoward</h1>
-  <p class="chapter-header-sub reveal reveal-delay-2">A romantasy about a murder that hasn't happened yet.</p>
+  <p class="chapter-header-pre">Before you begin</p>
+  <h1 class="chapter-header-title">Content Warnings</h1>
+  <p class="chapter-header-sub">No plot spoilers.</p>
 </section>
 
-<div class="chapter-body">
-  <div class="kindle-reader reveal">
-    <p class="chapter-label">Chapter One</p>
-    <div class="chapter-name">Coming Soon</div>
+<section class="cw-section">
+  <div class="cw-inner">
+    <p class="cw-intro">SHADOWARD is written for readers 18 and older.</p>
 
-    <div class="prose">
-      <p class="pull-quote">There you are, darling. I've been looking everywhere for you.</p>
+    <ul class="cw-list">
+      <li>Violence, murder, death, and blood</li>
+      <li>Injury, injury detail, and fire injury</li>
+      <li>Attempted sexual assault</li>
+      <li>Stalking</li>
+      <li>Confinement</li>
+      <li>Physical and emotional abuse</li>
+      <li>Panic attacks</li>
+      <li>Animal illness</li>
+      <li>Explicit sexual content, roughly a 3 out of 5 on heat</li>
+    </ul>
 
-      <p class="blurb-heading">A princess on the run.</p>
-      <p class="no-indent">Lysandra wakes at midnight to a vision of her own death. A masked killer is coming for her, the only question is when. She cuts her hair, abandons the palace, and flees to the edge of the empire.</p>
-
-      <p class="blurb-heading">A lord with a dark reputation.</p>
-      <p class="no-indent">Alaris, lord of the nightlands, possesses a relic that could save her life. To get close enough to steal it, she takes work as a hawk keeper at his castle. But Alaris is dangerously perceptive, watching her with a focus that makes it hard to lie to him. And the longer she's near him, the harder it is to want to.</p>
-
-      <p class="blurb-heading">A masked hunter who never stops.</p>
-      <p class="no-indent">As a wary trust grows between them, visions of her murder begin to consume her. Running away only bought her time, not survival. Lysandra must solve the mystery of her own murder before the killer finds her.</p>
-
-      <p class="meta">135,000 words. Book One of a planned duology with a complete story arc.</p>
-      <p class="meta">Content notes: Violence, murder, death, blood, injury, fire injury, attempted sexual assault, stalking, confinement, physical and emotional abuse, panic attacks, animal illness, and explicit sexual content. Written for readers 18 and older.</p>
-    </div>
+    <p class="cw-closing">Your mental health matters.</p>
   </div>
-</div>
+</section>
 
-<section class="chapter-cta reveal">
-  <h2>Want the whole book?</h2>
+<section class="chapter-cta">
+  <h2>Ready to read it?</h2>
   <p>SHADOWARD is coming soon. Join the newsletter and you'll be the first to know the moment it's available.</p>
   <div class="cta-buttons">
     <a href="#newsletter" class="btn-primary">Get Notified</a>
@@ -464,13 +398,13 @@ footer a:hover { color: #c4a84d; }
 <section class="newsletter-section" id="newsletter">
   <canvas id="newsletter-stars"></canvas>
   <div class="newsletter-inner">
-    <h2 class="reveal">Get on the list.</h2>
-    <p class="subtitle reveal reveal-delay-1">Cover reveals. Character art. Launch day access. You'll see it here first.</p>
-    <form class="newsletter-form reveal reveal-delay-2" action="https://app.kit.com/forms/9125986/subscriptions" method="post" data-sv-form="9125986" data-uid="24607f29d3">
+    <h2>Get on the list.</h2>
+    <p class="subtitle">Cover reveals. Character art. Launch day access. You'll see it here first.</p>
+    <form class="newsletter-form" action="https://app.kit.com/forms/9125986/subscriptions" method="post" data-sv-form="9125986" data-uid="24607f29d3">
       <input type="email" name="email_address" placeholder="Your email address" required>
       <button type="submit">I'm In &#10141;</button>
     </form>
-    <p class="newsletter-fine reveal reveal-delay-2">No spam. Unsubscribe any time.</p>
+    <p class="newsletter-fine">No spam. Unsubscribe any time.</p>
   </div>
 </section>
 
@@ -523,16 +457,6 @@ footer a:hover { color: #c4a84d; }
 })();
 
 (function() {
-  var reveals = document.querySelectorAll('.reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(function(el) { observer.observe(el); });
-})();
-
-(function() {
   var nav = document.getElementById('mainNav');
   window.addEventListener('scroll', function() {
     if (window.scrollY > 80) nav.classList.add('scrolled');
@@ -555,16 +479,6 @@ footer a:hover { color: #c4a84d; }
       menu.classList.remove('open');
       document.body.style.overflow = '';
     });
-  });
-})();
-
-(function() {
-  var glow = document.getElementById('cursorGlow');
-  if (!glow) return;
-  if (window.innerWidth < 900) { glow.style.display = 'none'; return; }
-  document.addEventListener('mousemove', function(e) {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
   });
 })();
 
