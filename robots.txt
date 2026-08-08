@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.authoralisonarcher.com/sitemap.xml
+Sitemap: https://authoralisonarcher.com/sitemap.xml

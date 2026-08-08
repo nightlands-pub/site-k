@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!--
+  ============================================================================
+  PERMANENT REDIRECT TARGET FOR THE PRINTED QR CODE.
+
+  The QR code printed in the back of SHADOWARD points here, at
+  https://authoralisonarcher.com/next , and can never be changed once books
+  are printed. This page is the part you CAN change.
+
+  TO CHANGE WHERE READERS LAND, EDIT THE ONE URL BELOW.
+  It appears three times on purpose (meta refresh, canonical, script) plus
+  once in the visible fallback link. Change all four to the same address.
+
+  Right now it points at the newsletter, because book two has no retail
+  listing yet. When the Amazon listing exists, swap in that URL, then run:
+      bash bookmarketing/scripts/deploy-site.sh
+
+  DO NOT rename, move or delete this /next directory. Ever. Every printed
+  copy of the book depends on this exact path resolving.
+  ============================================================================
+-->
+
+<meta http-equiv="refresh" content="0; url=https://authoralisonarcher.com/signup">
+<link rel="canonical" href="https://authoralisonarcher.com/signup">
+<meta name="robots" content="noindex">
+<title>What's next &mdash; Alison Archer</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#12100e;color:#f2ece1;text-align:center;padding:32px;
+       font:400 18px/1.6 "Iowan Old Style","Palatino Linotype",Georgia,serif}
+  a{color:#e8d9b0}
+</style>
+</head>
+<body>
+  <p>Taking you there now.<br>
+  If nothing happens, tap
+  <a href="https://authoralisonarcher.com/signup">authoralisonarcher.com/signup</a>.</p>
+
+<script>
+  location.replace("https://authoralisonarcher.com/signup");
+</script>
+</body>
+</html>
